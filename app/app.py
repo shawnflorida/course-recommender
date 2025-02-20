@@ -1,9 +1,10 @@
 import sqlite3
+import time
 import streamlit as st
 import pandas as pd
 import random
 from sqlalchemy import create_engine
-from datetime import date, datetime, time
+from datetime import date
 
 # Connect to SQLite database
 engine = create_engine('sqlite:///university.db')
@@ -109,8 +110,6 @@ def add_activity(teacher, activities, seminars, specializations, engine):
                     st.session_state['activities'] = updated_activities
 
                     st.success("🎉 **Activity added successfully!**")
-                    time.sleep(3)  # Wait for 3 seconds
-                    st.rerun()  # ✅ Force UI refresh
 
 # Function to update specialization in the database
 def update_specialization_in_db(teacher_id, specialization_name, conn):

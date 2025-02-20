@@ -3,7 +3,7 @@ import streamlit as st
 import pandas as pd
 import random
 from sqlalchemy import create_engine
-from datetime import date, datetime
+from datetime import date, datetime, time
 
 # Connect to SQLite database
 engine = create_engine('sqlite:///university.db')

@@ -110,7 +110,8 @@ def add_activity(teacher, activities, seminars, specializations, engine):
                     st.session_state['activities'] = updated_activities
 
                     st.success("🎉 **Activity added successfully!**")
-
+                    time.sleep(2)  # Wait for 2 seconds
+                    st.rerun()  # ✅ Force UI refresh
 # Function to update specialization in the database
 def update_specialization_in_db(teacher_id, specialization_name, conn):
     cursor = conn.cursor()
